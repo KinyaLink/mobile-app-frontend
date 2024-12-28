@@ -1,2 +1,2 @@
-# mobile-app
-Mobile app having frontend of our KinyaLink hackathon project
+# mobile-app-frontend
+Frontend of our mobile app i.e KinyaLink app to be developed for 2025 RCA Hackathon Project Competition
