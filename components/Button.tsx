@@ -1,10 +1,19 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 
-const Button = () => {
+interface Props {
+  buttonText: string;
+  onTap: () => void;
+}
+const Button = ({ buttonText, onTap }: Props) => {
   return (
     <View>
-      <Text>Button</Text>
+      <TouchableOpacity
+        className="px-4 py-2 bg-[#6060FF] rounded-lg"
+        onPress={onTap}
+      >
+        <Text>{buttonText}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
