@@ -1,10 +1,12 @@
 import React from "react";
 import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
 import { useFonts } from "expo-font";
+import FormInputField from "@/components/FormInputField";
 
 const SignUp = () => {
   const [areFontsLoaded] = useFonts({
     "Poppins-Regular": require("../../assets/fonts/poppins/Poppins-Regular.ttf"),
+    "Poppins-Bold": require("../../assets/fonts/poppins/Poppins-Bold.ttf"),
     "Geist-Regular": require("../../assets/fonts/geist/Geist-Regular.ttf"),
   });
 
@@ -24,9 +26,10 @@ const SignUp = () => {
           style={{ position: "absolute", marginTop: 30 }}
         />
         <Text style={styles.text}>
-          Dashboard Sign
+          Sign
           <Text style={{ ...styles.text, color: "#6060FF" }}>Up</Text>
         </Text>
+        <FormInputField />
       </View>
     </SafeAreaView>
   );
@@ -45,6 +48,6 @@ const styles = StyleSheet.create({
   text: {
     color: "#fff",
     fontSize: 40,
-    fontFamily: "Geist-Regular",
+    fontFamily: "Poppins-Bold",
   },
 });
