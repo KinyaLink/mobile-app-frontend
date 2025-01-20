@@ -12,10 +12,11 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 30,
     fontWeight: "bold",
+    fontFamily: "",
     textAlign: "center",
     marginTop: 20,
+    fontSize: 30,
     marginBottom: 20,
     color: "#333"
   } 
