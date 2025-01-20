@@ -12,6 +12,8 @@ module.exports = {
         pmedium: "Poppins-Medium",
         psemibold: "Poppins-SemiBold",
         pextrabold: "Poppins-ExtraBold",
+        pextralight: "Poppins-ExtraLight",
+        pblack: "Poppins-Black",
         plight: "Poppins-Light",
         gregular: "Geist-Regular",
         gbold: "Geist-Bold",
@@ -20,6 +22,8 @@ module.exports = {
         gsemibold: "Geist-SemiBold",
         gextrabold: "Geist-ExtraBold",
         glight: "Geist-Light",
+        gblack: "Geist-Black",
+        gextralight: "Poppins-ExtraLight",
       }
     },
   },
