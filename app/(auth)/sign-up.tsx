@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
 import { useFonts } from "expo-font";
 import FormInputField from "@/components/FormInputField";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 const SignUp = () => {
   const [areFontsLoaded] = useFonts({
@@ -21,15 +23,51 @@ const SignUp = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ display: "flex", alignItems: "center" }}>
-        <Image
+        {/* <Image
           source={require("../../assets/images/kl-logo.png")}
           style={{ position: "absolute", marginTop: 30 }}
-        />
+        /> */}
         <Text style={styles.text}>
           Sign
           <Text style={{ ...styles.text, color: "#6060FF" }}>Up</Text>
         </Text>
-        <FormInputField />
+        <View>
+          <FormInputField
+            placeholder="Email"
+            icon={
+              <MaterialCommunityIcons
+                name="email-outline"
+                size={30}
+                color="white"
+              />
+            }
+          />
+          <FormInputField
+            placeholder="Username"
+            icon={<FontAwesome5 name="user-circle" size={30} color="white" />}
+          />
+          <FormInputField
+            placeholder="Password"
+            icon={
+              <MaterialCommunityIcons
+                name="shield-key-outline"
+                size={30}
+                color="white"
+              />
+            }
+          />
+          <FormInputField
+            placeholder="Confirm Password"
+            icon={
+              <MaterialCommunityIcons
+                name="shield-check-outline"
+                size={30}
+                color="white"
+              />
+            }
+          />
+        </View>
+        
       </View>
     </SafeAreaView>
   );

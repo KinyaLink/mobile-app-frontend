@@ -2,42 +2,44 @@ import { View, StyleSheet, TextInput } from "react-native";
 import React from "react";
 
 interface Props {
-  label: string;
   icon: JSX.Element;
   placeholder: string;
 }
-const FormInputField = ({ label, icon, placeholder }: Props) => {
+const FormInputField = ({ icon, placeholder }: Props) => {
   return (
       <View style={styles.container}>
         <View style={styles.icon}>{icon}</View>
-        <TextInput style={styles.input} placeholder="Email" />
+        <TextInput style={styles.input} placeholder={placeholder} placeholderTextColor='#ffffff' />
       </View>
   );
 };
 
 export default FormInputField;
-
 const styles = StyleSheet.create({
   input: {
     flexDirection: "row",
-    marginBottom: 10,
-    alignItems: "center"
+    height: 55,
+    fontFamily: "Geist-Regular",
+    color: "white",
+    paddingLeft: 50,
+    paddingRight: 10,
+    fontSize: 20,
+    opacity: 0.7,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#FFFFFF30",
+    backgroundColor: "#15151500",  
   },
   container: {
     position: "relative",
-    width: 150,
-    height: 30,
+    width: 370,
+    marginBottom: 10,
   },
   icon: {
     position: "absolute",
     left: 10,
     top: 10,
-    backgroundColor: "#f2f2f2",
-    padding: 5,
-    borderRadius: 5,
-    width: 30,
-    height: 30,
-    justifyContent: "center",
-    alignItems: "center"
+    opacity: 0.5,
+    zIndex: 2,
   }
 })
