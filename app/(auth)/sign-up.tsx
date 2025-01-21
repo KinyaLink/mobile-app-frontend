@@ -1,4 +1,10 @@
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import FormInputField from "@/components/FormInputField";
+import AuthButton from "@/components/AuthButton";
+import LoginForm from "@/components/LoginForm";
+import React, { useState } from "react";
+import { useFonts } from "expo-font";
 import {
   View,
   Text,
@@ -7,11 +13,6 @@ import {
   Image,
   TouchableWithoutFeedback,
 } from "react-native";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import FormInputField from "@/components/FormInputField";
-import { useFonts } from "expo-font";
-import React, { useState } from "react";
-import LoginForm from "@/components/LoginForm";
 
 const SignUp = () => {
   const [agreed, setAgreed] = useState(false);
@@ -37,7 +38,7 @@ const SignUp = () => {
       <View style={{ display: "flex", alignItems: "center" }}>
         <Image
           source={require("../../assets/images/kl-logo.png")}
-          style={{ position: "absolute", bottom: 80 }}
+          style={{ position: "absolute", bottom: 120 }}
         />
         <Text style={styles.title}>
           Sign
@@ -46,7 +47,14 @@ const SignUp = () => {
         <View>
           <LoginForm />
         </View>
-        <View style={{ flexDirection: "row", gap: 5, alignItems: "center" }}>
+        <View
+          style={{
+            flexDirection: "row",
+            gap: 5,
+            alignItems: "center",
+            paddingTop: 5,
+          }}
+        >
           <TouchableWithoutFeedback onPress={() => setAgreed(!agreed)}>
             {agreed ? (
               <MaterialCommunityIcons
@@ -85,6 +93,11 @@ const SignUp = () => {
             </Text>{" "}
             of KinyaLink
           </Text>
+        </View>
+        <View>
+          <AuthButton
+            buttonText="Register"
+          />
         </View>
       </View>
     </SafeAreaView>
