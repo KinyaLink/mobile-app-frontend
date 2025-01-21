@@ -5,7 +5,7 @@ interface Props {
   buttonText: string;
   onTap: () => void;
 }
-const Button = ({ buttonText, onTap }: Props) => {
+const AuthButton = ({ buttonText, onTap }: Props) => {
   return (
     <View>
       <TouchableOpacity style={styles.buttonContainer} onPress={onTap}>
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
     
   }
 })
-export default Button;
+export default AuthButton;

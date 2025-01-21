@@ -10,7 +10,7 @@ const LoginForm = () => {
   const validationSchema = Yup.object().shape({
     email: Yup.string().email().required(),
     username: Yup.string().min(3).max(20).required(),
-    password: Yup.string().min(8).max(20).required(),
+    password: Yup.string().min(8).required(),
     confirmPassword: Yup.string().oneOf(
       [Yup.ref("password")],
       "Your passwords should match"
@@ -38,12 +38,35 @@ const LoginForm = () => {
       }) => (
         <View>
           <FormInputField
-            onChangeText={handleChange("email")} 
-            onBlur={handleBlur}
+            onChange={() => ""}
             placeholder="Email"
             icon={
               <MaterialCommunityIcons
                 name="email-outline"
+                size={30}
+                color="white"
+              />
+            }
+          />
+          <FormInputField
+            placeholder="Username"
+            icon={<FontAwesome5 name="user-circle" size={30} color="white" />}
+          />
+          <FormInputField
+            placeholder="Password"
+            icon={
+              <MaterialCommunityIcons
+                name="shield-key-outline"
+                size={30}
+                color="white"
+              />
+            }
+          />
+          <FormInputField
+            placeholder="Confirm Password"
+            icon={
+              <MaterialCommunityIcons
+                name="shield-check-outline"
                 size={30}
                 color="white"
               />

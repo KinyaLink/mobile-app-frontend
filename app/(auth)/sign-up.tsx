@@ -1,11 +1,20 @@
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  TouchableWithoutFeedback,
+} from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import FormInputField from "@/components/FormInputField";
 import { useFonts } from "expo-font";
-import React from "react";
+import React, { useState } from "react";
+import LoginForm from "@/components/LoginForm";
 
 const SignUp = () => {
+  const [agreed, setAgreed] = useState(false);
   const [areFontsLoaded] = useFonts({
     "Poppins-Regular": require("../../assets/fonts/poppins/Poppins-Regular.ttf"),
     "Poppins-Bold": require("../../assets/fonts/poppins/Poppins-Bold.ttf"),
@@ -30,48 +39,53 @@ const SignUp = () => {
           source={require("../../assets/images/kl-logo.png")}
           style={{ position: "absolute", bottom: 80 }}
         />
-        <Text style={styles.text}>
+        <Text style={styles.title}>
           Sign
-          <Text style={{ ...styles.text, color: "#6060FF" }}>Up</Text>
+          <Text style={{ ...styles.title, color: "#6060FF" }}>Up</Text>
         </Text>
         <View>
-          <FormInputField
-            onChange={() => ''}
-            placeholder="Email"
-            icon={
-              <MaterialCommunityIcons
-                name="email-outline"
-                size={30}
-                color="white"
-              />
-            }
-          />
-          <FormInputField
-            placeholder="Username"
-            icon={<FontAwesome5 name="user-circle" size={30} color="white" />}
-          />
-          <FormInputField
-            placeholder="Password"
-            icon={
-              <MaterialCommunityIcons
-                name="shield-key-outline"
-                size={30}
-                color="white"
-              />
-            }
-          />
-          <FormInputField
-            placeholder="Confirm Password"
-            icon={
-              <MaterialCommunityIcons
-                name="shield-check-outline"
-                size={30}
-                color="white"
-              />
-            }
-          />
+          <LoginForm />
         </View>
-        
+        <View style={{ flexDirection: "row", gap: 5, alignItems: "center" }}>
+          <TouchableWithoutFeedback onPress={() => setAgreed(!agreed)}>
+            {agreed ? (
+              <MaterialCommunityIcons
+                name="checkbox-intermediate"
+                size={24}
+                color="#6060FF"
+              />
+            ) : (
+              <MaterialCommunityIcons
+                name="checkbox-blank-outline"
+                size={24}
+                color="#6060FF"
+              />
+            )}
+          </TouchableWithoutFeedback>
+          <Text style={styles.text}>
+            I agree to the{" "}
+            <Text
+              style={{
+                ...styles.text,
+                color: "#6060FF",
+                textDecorationLine: "underline",
+              }}
+            >
+              Terms
+            </Text>{" "}
+            and{" "}
+            <Text
+              style={{
+                ...styles.text,
+                color: "#6060FF",
+                textDecorationLine: "underline",
+              }}
+            >
+              Conditions
+            </Text>{" "}
+            of KinyaLink
+          </Text>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -87,9 +101,14 @@ const styles = StyleSheet.create({
     position: "relative",
     backgroundColor: "#050505",
   },
-  text: {
+  title: {
     color: "#fff",
     fontSize: 40,
     fontFamily: "Poppins-Bold",
+  },
+  text: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontFamily: "Geist-Regular",
   },
 });
