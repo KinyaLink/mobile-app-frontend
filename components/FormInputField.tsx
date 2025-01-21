@@ -1,16 +1,20 @@
-import { View, StyleSheet, TextInput } from "react-native";
+import { View, StyleSheet, TextInput, TextInputProps } from "react-native";
 import React from "react";
 
-interface Props {
+interface Props extends TextInputProps {
   icon: JSX.Element;
   placeholder: string;
 }
-const FormInputField = ({ icon, placeholder }: Props) => {
+const FormInputField = ({ icon, placeholder, ...props }: Props) => {
   return (
-      <View style={styles.container}>
-        <View style={styles.icon}>{icon}</View>
-        <TextInput style={styles.input} placeholder={placeholder} placeholderTextColor='#ffffff' />
-      </View>
+    <View style={styles.container}>
+      <View style={styles.icon}>{icon}</View>
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+        placeholderTextColor="#999999" 
+      />
+    </View>
   );
 };
 
@@ -24,11 +28,10 @@ const styles = StyleSheet.create({
     paddingLeft: 50,
     paddingRight: 10,
     fontSize: 20,
-    opacity: 0.7,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "#FFFFFF30",
-    backgroundColor: "#15151500",  
+    backgroundColor: "#15151500",
   },
   container: {
     position: "relative",
@@ -41,5 +44,5 @@ const styles = StyleSheet.create({
     top: 10,
     opacity: 0.5,
     zIndex: 2,
-  }
-})
+  },
+});

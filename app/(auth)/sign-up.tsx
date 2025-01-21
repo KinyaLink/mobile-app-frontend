@@ -1,9 +1,9 @@
-import React from "react";
-import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
-import { useFonts } from "expo-font";
-import FormInputField from "@/components/FormInputField";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import FormInputField from "@/components/FormInputField";
+import { useFonts } from "expo-font";
+import React from "react";
 
 const SignUp = () => {
   const [areFontsLoaded] = useFonts({
@@ -26,16 +26,17 @@ const SignUp = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ display: "flex", alignItems: "center" }}>
-        {/* <Image
+        <Image
           source={require("../../assets/images/kl-logo.png")}
-          style={{ position: "absolute", marginTop: 30 }}
-        /> */}
+          style={{ position: "absolute", bottom: 80 }}
+        />
         <Text style={styles.text}>
           Sign
           <Text style={{ ...styles.text, color: "#6060FF" }}>Up</Text>
         </Text>
         <View>
           <FormInputField
+            onChange={() => ''}
             placeholder="Email"
             icon={
               <MaterialCommunityIcons
