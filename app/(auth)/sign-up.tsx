@@ -10,6 +10,9 @@ const SignUp = () => {
     "Poppins-Regular": require("../../assets/fonts/poppins/Poppins-Regular.ttf"),
     "Poppins-Bold": require("../../assets/fonts/poppins/Poppins-Bold.ttf"),
     "Geist-Regular": require("../../assets/fonts/geist/Geist-Regular.ttf"),
+    "Geist-Light": require("../../assets/fonts/geist/Geist-Light.ttf"),
+    "Geist-Thin": require("../../assets/fonts/geist/Geist-Thin.ttf"),
+    "Geist-ExtraLight": require("../../assets/fonts/geist/Geist-ExtraLight.ttf"),
   });
 
   if (!areFontsLoaded) {

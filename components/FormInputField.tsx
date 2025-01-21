@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   input: {
     flexDirection: "row",
     height: 55,
-    fontFamily: "Geist-Regular",
+    fontFamily: "Geist-ExtraLight",
     color: "white",
     paddingLeft: 50,
     paddingRight: 10,
