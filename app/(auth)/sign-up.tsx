@@ -52,7 +52,7 @@ const SignUp = () => {
             flexDirection: "row",
             gap: 5,
             alignItems: "center",
-            paddingTop: 5,
+            paddingTop: 10,
           }}
         >
           <TouchableWithoutFeedback onPress={() => setAgreed(!agreed)}>

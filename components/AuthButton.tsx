@@ -23,16 +23,9 @@ const AuthButton = ({ buttonText }: Props) => {
         }, 2000);
       }}
     >
-      <View
-        style={{
-          flex: 1,
-          // width: "100%",
-          justifyContent: "center",
-          backgroundColor: "#aaa",
-        }}
-      >
+      <View>
         {isLoading ? (
-          <ActivityIndicator size={32} color="#FFFFFF" />
+          <ActivityIndicator size={28} color="#FFFFFF" />
         ) : (
           <Text style={styles.text}>{buttonText}</Text>
         )}
@@ -43,11 +36,13 @@ const AuthButton = ({ buttonText }: Props) => {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: 200,
+    width: 250,
     backgroundColor: "#6060FF",
-    paddingVertical: 8,
+    paddingVertical: 10,
     borderRadius: 10,
+    justifyContent: "center",
     alignItems: "center",
+    marginTop: 10,
   },
   text: {
     color: "white",
